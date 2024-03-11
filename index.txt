@@ -1,0 +1,3 @@
+mFTdfhmFppPGJAkj
+
+mongodb+srv://hotel_booking:mFTdfhmFppPGJAkj@cluster0.ubyns6e.mongodb.net/hotel_booking
