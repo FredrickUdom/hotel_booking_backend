@@ -5,7 +5,7 @@ const userLogin = require('../model/loginUser');
 
 // REGISTER ROUTE
 router.post('/register', async(req, res)=>{
-    const newUser = new userRegister(req.body)
+    const newUser = await new userRegister(req.body)
     try {
         const user = newUser.save()
         return user;
@@ -16,10 +16,10 @@ router.post('/register', async(req, res)=>{
 
 
 // LOGIN ROUTE
-router.post('login', (req,res)=>{
+router.post('login', async (req,res)=>{
     const {email, password}= req.body;
     try {
-        const user = new userLogin.findOne({email:email, password:password});
+        const user = await new userLogin.findOne({email:email, password:password});
         if(!user){
            return res.json({message:'login failed'}).status(400);
         };
