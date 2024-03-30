@@ -16,7 +16,7 @@ const userSchema = mongoes.Schema({
         required: true
     },
 
-    isAdminn:{
+    isAdmin:{
         type: Boolean,
         default: false
     }
@@ -24,6 +24,6 @@ const userSchema = mongoes.Schema({
     timestamps: true
 })
 
-const userModel = mongoes.model('user', userSchema);
+const userModel = mongoes.model('users', userSchema);
 
 module.exports = userModel;
