@@ -28,7 +28,7 @@ router.post('login', (req,res)=>{
             email: user.email,
             name: user.name,
             _id: user._id,
-            isAdmin: user.isAdmin,
+            isAdmin: user.isAdmin
         }
         return res.send(userDetails)
         // return res.send(user);
