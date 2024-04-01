@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const userRegister = require('../model/registerUserModel');
-const userLogin = require('../model/loginUserModel'); 
+
 
 // REGISTER ROUTE
 router.post('/register', async(req, res)=>{
@@ -19,7 +19,7 @@ router.post('/register', async(req, res)=>{
 router.post('/login', async (req,res)=>{
     const {email, password}= req.body;
     try {
-        const user = await new userLogin.findOne({email:email, password:password});
+        const user = await new userRegister.findOne({email:email, password:password});
         if(!user){
            return res.json({message:'login failed'}).status(400);
         };
