@@ -14,6 +14,17 @@ router.post('/register', async(req, res)=>{
     }
 });
 
+// GET ALL USERS
+router.get('/allUsers', async(req, res)=>{
+   try {
+    const user = await  userRegister.find();
+    if(!user) res.send('no user found');
+    return res.send(user).json().status(200)
+   } catch (error) {
+    return res.json({message: 'something went wrong', error})
+   }
+})
+
 
 // LOGIN ROUTE
 router.post('/login', async (req, res)=>{
@@ -35,5 +46,7 @@ router.post('/login', async (req, res)=>{
     } catch (error) {
         res.json({message: error}).status(400)
     }
+
+
 })
 module.exports=router;
